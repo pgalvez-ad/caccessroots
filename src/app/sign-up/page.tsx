@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 import { Wordmark } from "@/components/wordmark";
@@ -27,8 +27,7 @@ const ROLES: { value: UserRole; label: string; desc: string }[] = [
 
 function SignUpContent() {
   const router = useRouter();
-  const params = useSearchParams();
-  const initialRole = (params.get("role") as UserRole) || "requestor";
+  const initialRole: UserRole = "requestor";
   const [role, setRole] = useState<UserRole>(initialRole);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
