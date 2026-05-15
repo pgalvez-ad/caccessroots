@@ -112,7 +112,7 @@ function SignInContent() {
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<main className="min-h-screen grid place-items-center">Loading...</main>}>
       <SignInContent />
     </Suspense>
   );
