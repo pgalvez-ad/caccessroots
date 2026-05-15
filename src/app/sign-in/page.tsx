@@ -6,7 +6,9 @@ import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 import { Wordmark } from "@/components/wordmark";
 
-export default function SignInPage() {
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+function SignInContent() {
   const router = useRouter();
   const params = useSearchParams();
   const next = params.get("next") ?? "/dashboard";
