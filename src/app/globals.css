@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body { @apply h-full; }
+  body {
+    @apply bg-oat-50 text-ink antialiased;
+    font-family: var(--font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif, Georgia), Georgia, serif;
+    @apply text-forest-700;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white border border-sand-100 shadow-card;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-forest-700 text-oat-50 hover:bg-forest-900;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-forest-700 border border-brand-200 hover:bg-brand-50;
+  }
+  .btn-danger {
+    @apply btn bg-terra-600 text-white hover:bg-terra-700;
+  }
+  .input {
+    @apply w-full rounded-xl border border-sand-200 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200;
+  }
+  .label {
+    @apply block text-sm font-medium text-ink mb-1;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+  .brand-wordmark {
+    font-family: var(--font-serif, Georgia), Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .brand-wordmark .accent-c {
+    @apply text-brand-600;
+  }
+}
